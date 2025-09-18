@@ -42,4 +42,11 @@ public class NonPersistentUserRepository {
         }
         return null;
     }
+
+    public void removeById(UUID id) {
+        this.internalState.removeIf(
+                user ->
+                        user.getId().equals(id)
+        );
+    }
 }
