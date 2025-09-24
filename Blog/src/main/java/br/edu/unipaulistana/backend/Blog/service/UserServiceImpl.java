@@ -28,4 +28,21 @@ public class UserServiceImpl implements UserService{
     public void deleteById(UUID id) {
         this.repository.removeById(id);
     }
+
+    @Override
+    public User create(User user) {
+        if(user.getId() == null)
+            user.setId(UUID.randomUUID());
+        return this.repository.create(user);
+    }
+
+    @Override
+    public User update(User user) {
+        return this.repository.update(user);
+    }
+
+    @Override
+    public User partialUpdate(User user) {
+        return  this.repository.update(user);
+    }
 }
