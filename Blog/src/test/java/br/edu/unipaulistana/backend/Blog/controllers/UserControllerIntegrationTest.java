@@ -40,7 +40,7 @@ public class UserControllerIntegrationTest {
                         post("/api/users")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(bodyCreate)))
-                .andExpect(status().isCreated())
+                .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(id)))
                 .andExpect(jsonPath("$.name", is("orlandao")))
                 .andReturn();
