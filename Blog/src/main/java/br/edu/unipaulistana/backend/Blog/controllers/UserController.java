@@ -11,7 +11,7 @@ import java.util.UUID;
 
 //http://locallhost:8080/users
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 @RequiredArgsConstructor
 public class UserController {
 
