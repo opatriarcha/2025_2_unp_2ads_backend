@@ -11,11 +11,15 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepositoryCustom<User, UUID>{
 
     @PersistenceContext
     private final EntityManager entityManager;
+
+    public UserRepositoryImpl(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 
     @Override
     public Optional<User> findByIdWithProfileAndPostsCriteria(UUID id) {
