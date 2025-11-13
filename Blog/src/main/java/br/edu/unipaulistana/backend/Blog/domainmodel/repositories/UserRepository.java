@@ -17,6 +17,9 @@ public interface UserRepository extends
     @Query("SELECT u FROM User u WHERE u.email = :email")
     public Optional<User> findByEmail(String email);
 
+//    @Query("SELECT u FROM User u WHERE u.name = :name")
+//    public Optional<User> findByName(String name);
+
     public Optional<User> findByName(String name);
     public Optional<User> findByNameAndEmail(String name, String email);
     public List<User> findByNameStartingWithAndNameEndingWith(String name1, String name2);

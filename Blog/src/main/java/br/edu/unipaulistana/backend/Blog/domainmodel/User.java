@@ -17,6 +17,7 @@ import java.util.UUID;
         @Index( name = "IDX_PASSWORD",columnList = "password")
 
 })
+@Builder
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
